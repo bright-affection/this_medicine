@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       bottomNavigationBar: SizedBox(
-        height: 80, // 하단 바 높이를 충분히 작게 조정
+        height: 100, // 하단 바 높이를 충분히 작게 조정
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
@@ -70,14 +70,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             BottomNavigationBarItem(
               icon: Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 25),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
                       'assets/img/camera-button.svg',
+                      width: 20,
+                      height: 39,
                     ),
-                    Text(''), // 텍스트 버튼의 표시를 막기 위해 빈 텍스트 위젯 추가
                   ],
                 ),
               ),
@@ -91,8 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
           currentIndex: _selectedIndex,
           selectedItemColor: Color(0xFFFA8100),
           unselectedItemColor: Colors.black,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize:15),
+          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           onTap: _onItemTapped,
         ),
       ),
@@ -117,7 +118,7 @@ class HomePage extends StatelessWidget {
         ),
         child: Text(
           'Home Page',
-          style: TextStyle(fontSize: 24), // 버튼 텍스트 크기 설정
+          style: TextStyle(fontSize: 15), // 버튼 텍스트 크기 설정
         ),
       ),
     );
@@ -141,7 +142,7 @@ class SearchPage extends StatelessWidget {
         ),
         child: Text(
           'Search Page',
-          style: TextStyle(fontSize: 24), // 버튼 텍스트 크기 설정
+          style: TextStyle(fontSize: 15), // 버튼 텍스트 크기 설정
         ),
       ),
     );
@@ -165,7 +166,7 @@ class ProfilePage extends StatelessWidget {
         ),
         child: Text(
           'Profile Page',
-          style: TextStyle(fontSize: 24), // 버튼 텍스트 크기 설정
+          style: TextStyle(fontSize: 15), // 버튼 텍스트 크기 설정
         ),
       ),
     );
