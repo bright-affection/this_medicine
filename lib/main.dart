@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bottom Navigation Demo',
+      title: 'Top Navigation Bar',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'Pretendard', // Pretendard 폰트 적용
@@ -50,10 +47,36 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Bottom Navigation Demo'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBar(
+          title: Text(''), //없어질 것
+          leading: IconButton(
+            icon: Image.asset(
+              'assets/img/back-button.png',
+              width: 50,
+              height: 50,
+            ),
+            onPressed: () {
+              //버튼 누르면 갈 페이지 열기
+            },
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Image.asset(
+                'assets/img/alarm-button.png',
+                width: 50,
+                height: 50,
+              ),
+              onPressed: () {
+                //버튼 클릭 시 갈 페이지 열기
+              },
+            ),
+          ],
+        ),
       ),
-      resizeToAvoidBottomInset : false,
+
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: SingleChildScrollView(
           child: _widgetOptions.elementAt(_selectedIndex),
@@ -70,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             BottomNavigationBarItem(
               icon: Padding(
-                  padding: EdgeInsets.only(top: 25),
+                padding: EdgeInsets.only(top: 25),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -82,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-                label: '',
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: SizedBox.shrink(),
@@ -92,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
           currentIndex: _selectedIndex,
           selectedItemColor: Color(0xFFFA8100),
           unselectedItemColor: Colors.black,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize:15),
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           onTap: _onItemTapped,
         ),

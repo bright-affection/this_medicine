@@ -30,9 +30,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
   cupertino_icons: ^1.0.6
+
 
 
 
@@ -58,6 +60,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/img/camera-button.svg
+    - assets/img/alarm-button.png
+    - assets/img/back-button.png
   fonts:
     - family: Pretendard
       fonts:
